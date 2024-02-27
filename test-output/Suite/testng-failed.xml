@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="SubmitOrderWithDataProvider(failed)">
+    <classes>
+      <class name="test.SubmitOrderTest3">
+        <methods>
+          <include name="CheckOutMethod"/>
+          <include name="SubmitOrderTest1"/>
+          <include name="CloseBrowser"/>
+          <include name="LaunchBrowser"/>
+        </methods>
+      </class> <!-- test.SubmitOrderTest3 -->
+    </classes>
+  </test> <!-- SubmitOrderWithDataProvider(failed) -->
+</suite> <!-- Failed suite [Suite] -->
