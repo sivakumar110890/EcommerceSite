@@ -21,21 +21,16 @@ public class Listeners extends BaseTest implements ITestListener {
 	public void onTestStart(ITestResult result) {
 		test = extent.createTest(result.getMethod().getMethodName());
 		extentTest.set(test);
-
-		// not implemented
 	}
 
 	public void onTestSuccess(ITestResult result) {
 		extentTest.get().log(Status.PASS, "Test is PASSED");
-		// not implemented
+
 	}
 
 	public void onTestFailure(ITestResult result) {
 		extentTest.get().log(Status.FAIL, "Test is FAILED");
 		extentTest.get().fail(result.getThrowable());
-		
-		// driver =
-		// (WebDriver)result.getTestClass().getRealClass().getField("driver").get(result.getInstance);
 
 		String Filepath = null;
 		try {

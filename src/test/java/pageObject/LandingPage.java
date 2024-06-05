@@ -15,10 +15,8 @@ public class LandingPage extends AbstractComponent {
 
 	public LandingPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-
 	}
 
 	@FindBy(id = "userEmail")
@@ -44,7 +42,7 @@ public class LandingPage extends AbstractComponent {
 	public String GetInvalidUserMessageString() {
 		AbstractComponent abstractComponent = new AbstractComponent(driver);
 		abstractComponent.WaitvisibilityOfElementLocated(BY_IncorrectEmailOrPasswordMessage);
-		String InvalidCredentialMessage=WE_IncorrectEmailOrPasswordMessage.getText();
+		String InvalidCredentialMessage = WE_IncorrectEmailOrPasswordMessage.getText();
 		return InvalidCredentialMessage;
 	}
 }

@@ -17,6 +17,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -43,19 +44,23 @@ public class BaseTest {
 	@BeforeTest(alwaysRun = true)
 	public WebDriver LaunchBrowser() throws IOException {
 		propertyFileLoading();
-		//String browser = prop.getProperty("browser");
 		String BrowserFromProperty = prop.getProperty("browser");
-		String BrowserFromMavenComdLine=System.getProperty("browser");
-		String browser = BrowserFromMavenComdLine != null ? BrowserFromMavenComdLine:BrowserFromMavenComdLine;
-		
+		String BrowserFromMavenComdLine = System.getProperty("browser");
+		String browser = BrowserFromMavenComdLine != null ? BrowserFromMavenComdLine : BrowserFromMavenComdLine;
+
 		String url = prop.getProperty("url");
 		String username = prop.getProperty("username");
 		String password = prop.getProperty("password");
 		String productName = prop.getProperty("productName");
 		String CartProductVerifyName = prop.getProperty("CartProductVerifyName");
 
-		if (browser.equalsIgnoreCase("chrome")) {
-			driver = new ChromeDriver();
+		if (BrowserFromProperty.equalsIgnoreCase("chrome")) {
+			System.setProperty("webdriver.chrome.driver",
+					"D:\\Softwares\\Chrome_V_122\\chromedriver-win64\\chromedriver.exe");
+			ChromeOptions opt = new ChromeOptions();
+			File BinaryPath = new File("D:\\Softwares\\Chrome_V_122\\chrome-win64\\chrome.exe");
+			opt.setBinary(BinaryPath);
+			driver = new ChromeDriver(opt);
 
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			driver = new FirefoxDriver();

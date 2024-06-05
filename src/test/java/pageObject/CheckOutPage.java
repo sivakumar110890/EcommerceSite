@@ -14,8 +14,8 @@ import abstractComponents.AbstractComponent;
 public class CheckOutPage extends AbstractComponent {
 	WebDriver driver;
 
-	By waitTillPlaceOrderButton= By.cssSelector(".actions a");
-	
+	By waitTillPlaceOrderButton = By.cssSelector(".actions a");
+
 	@FindBy(css = ".actions a")
 	WebElement PlaceOrderButton;
 
@@ -36,7 +36,7 @@ public class CheckOutPage extends AbstractComponent {
 	List<WebElement> IndiaPossibleOptions;
 
 	public CheckOutPage(WebDriver driver) {
-		// TODO Auto-generated constructor stub
+
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);

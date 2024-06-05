@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.SubmitOrderTest3">
+      <class name="test.SubmitOrderTestWithScreenshot">
         <methods>
-          <include name="CheckOutMethod"/>
-          <include name="SubmitOrderTest1" invocation-numbers="0 1"/>
           <include name="CloseBrowser"/>
+          <include name="SubmitOrderTest1" invocation-numbers="0 1"/>
           <include name="LaunchBrowser"/>
+          <include name="CheckOutMethod"/>
         </methods>
-      </class> <!-- test.SubmitOrderTest3 -->
+      </class> <!-- test.SubmitOrderTestWithScreenshot -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
